@@ -5,12 +5,7 @@ import '../style/index.css'
 import starshipImages from '../assets/data/image.json';
 
 import {useNavigate} from 'react-router-dom';
-//Bu component, Starship adında bir bileşen oluşturuyor.
-// Bu bileşen, URL'deki "id" parametresi tarafından belirtilen tek bir yıldız gemisi hakkında ayrıntılı bilgileri görüntüleyecektir.
-// Burada, "id" parametresi useParams() hook'u aracılığıyla alınır
-// Sonra, yıldız gemisi bilgilerini almak için useEffect() hook'u kullanılır.
-// İstek, belirtilen "id" parametresine sahip olan yıldız gemisinin verilerini alacaktır.
-// API yanıtı alındıktan sonra, istenilen veriler ayrıştırılır ve setStarship() fonksiyonu kullanılarak "starship" state değişkenine atanır.
+//.
 const BASE_URL = "https://swapi.dev/api/starships/";
 
 export const Starships = () => {
