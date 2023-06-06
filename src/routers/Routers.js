@@ -1,12 +1,11 @@
 import {Route, Routes} from "react-router-dom";
 import {Home} from "../components/Home";
-import Starships from "../components/StarshipsDetail";
-//ana sayfa ve yıldız gemisi ayrıntılarını göstermek için farklı bileşenleri kullanarak React Router'ın URL yönlendirmesi özelliğini kullandim.
+import {StarshipsDetail} from "../components/StarshipsDetail";
 const Routers=()=>{
     return (
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/:id" element={<Starships />} />
+            <Route path="/:id" element={<StarshipsDetail/>} />
         </Routes>
     );
 }

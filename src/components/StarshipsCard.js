@@ -1,12 +1,8 @@
 import {motion} from 'framer-motion';
-// Bu componenet yıldız gemilerinin kartlarının oluşturulması için bir bileşendir.
-// Bu yıldız gemilerinin listesini görmek için bir dizi yıldız gemisi kartı bileşenini içeren
-//StarshipsCardList componenti içine dahil ettim.
 const StarshipCard = ({item, starshipImages, navigate}) => {
     return (
         <div
             className="card"
-            key={item.id}
             onClick={() =>
                 navigate(`/${item.url.slice(item.url.indexOf('starships/') + 'starships/'.length, -1)}`)
             }
@@ -18,7 +14,6 @@ const StarshipCard = ({item, starshipImages, navigate}) => {
                         (image) => image.id === item.url.slice(item.url.indexOf('starships/') + 'starships/'.length, -1)
                     )?.image
                 }
-                alt=""
             />
             <div className="title">
                 <h3 className="titleName">{item.name}</h3>
