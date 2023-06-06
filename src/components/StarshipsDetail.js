@@ -5,39 +5,20 @@ import '../style/index.css'
 import starshipImages from '../assets/data/image.json';
 
 import {useNavigate} from 'react-router-dom';
-//.
 const BASE_URL = "https://swapi.dev/api/starships/";
 
-export const Starships = () => {
+export const StarshipsDetail = () => {
     const {id} = useParams();
-    const navigate = useNavigate();
-
+    const navigate = useNavigate() ;
     const [starship, setStarship] = useState(null);
+
 
     useEffect(() => {
         axios.get(`${BASE_URL}/${id}`)
 
             .then(response => {
-                const {
-                    name,
-                    model,
-                    hyperdrive_rating,
-                    max_atmosphering_speed,
-                    passengers,
-                    manufacturer,
-                    cargo_capacity,
-                    crew
-                } = response.data;
-                setStarship({
-                    name,
-                    model,
-                    hyperdrive_rating,
-                    max_atmosphering_speed,
-                    passengers,
-                    manufacturer,
-                    cargo_capacity,
-                    crew
-                });
+                setStarship(response.data);
+
             })
             .catch(error => {
                 console.error(error);
@@ -108,4 +89,3 @@ export const Starships = () => {
 }
 
 
-export default Starships;
